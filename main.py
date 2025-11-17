@@ -6,9 +6,6 @@ from player import Player
 from asteroid import Asteroid
 from asteroidfield import AsteroidField
 
-
-
-
 def main():
     print(f"Starting Asteroids with pygame version: {pygame.version.vernum}")
     print(f"Screen width: {SCREEN_WIDTH}")
@@ -33,6 +30,7 @@ def main():
     AsteroidField.containers = (updatable)
 
     player = Player(x,y)
+    asteroidfield = AsteroidField()
 
     while 1:
         log_state()
@@ -42,6 +40,7 @@ def main():
         screen.fill("black")
         updatable.update(dt)
         for i in drawable:
+            #print (i)
             i.draw(screen)
         pygame.display.flip()   
         clock.tick(60)
